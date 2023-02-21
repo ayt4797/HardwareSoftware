@@ -261,42 +261,24 @@ int main(){
         printf("inverse * 283: %d\n",mult(eeaRes,i,283));
         // printf("\n eeaRes   : %d\n",eeaRes);
 }
-
-
-    // }
-    //is a generator check:
-    // count =findPrimitives(list);
-    // for(int i=0;i<count;i++){
-    //     printf("primitive_%d : %d\n",i,list[i]);
-    // }
     printf("Generators: ");
     for(int i=3;i<=256;i++){
         
         // printf("\nr0 %d, s0 %d t0 %d\n",r0,s0,t0);
         if(1==eea(i,283,&inverse)){
             generators[listSize++]= i;
-            // int inverseT = inverseTest(r0);
-            // if(inverse==inverseTest(r0)){
-            //     printf("inverse pass\n");
-            // }
-            // printf("\ninverse %d inverse test %d\n",inverse,inverseTest(i));
-            // generators = (int*) realloc(generators,sizeof(int)*(128));
             printf("%x ",i);
         }
     }
-    //     for(int i=2;i<=256;i++){
-    //         int p = primitives(11,fx);
-    //         if(p)
-    //         printf("%d \n",p);
-    //     }
     printf("list size: %d\n\n\n", listSize++);
 
-    // printf("val1 against all values: ");
-    // for(int i=0;i<255;i++){
-    //     int addRes = add(0xcb,i);
-    //     int multRes = mult(0xcb,i,283);
-    //     printf("add res: %x, mult Res: %x\n", addRes, multRes);
-    // }
+    printf("oxCB against all values: ");
+    for(int i=0;i<255;i++){
+        int addRes = add(0xcb,i);
+        int multRes = mult(0xcb,i,283);
+        int DivResult = division(0xcb,i,eeaRes);
+        printf("add res: %x, mult Res: %x Div Result\n", addRes, diviResults);
+    }
     // int b[256];
     // for(int i=0;i<256;i++){
     //     b[i] = mult(0x1,i,283);
